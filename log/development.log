@@ -278,3 +278,30 @@ ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=):
 Started GET "/" for 108.6.226.64 at 2019-02-12 18:31:40 +0000
 Cannot render console from 108.6.226.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 30ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 108.6.226.64 at 2019-02-12 18:31:44 +0000
+Cannot render console from 108.6.226.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 267ms (Views: 258.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authors/show" for 108.6.226.64 at 2019-02-12 18:31:51 +0000
+Cannot render console from 108.6.226.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", nil]]
+Completed 404 Not Found in 17ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=):
+  app/controllers/authors_controller.rb:3:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.0ms)
